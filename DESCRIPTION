@@ -7,11 +7,13 @@ Description: Single cell RNA-Seq data for 5902 cells from 18 patients
     GSE103322 data have been parsed into a SincleCellExperiment
     object available in ExperimentHub.
 Version: 0.99.0
-Author: Mariano Alvarez <reef103@gmail.com> 
-Maintainer: Bioconductor Package Maintainer <maintainer@bioconductor.org>
+Authors@R: c(person("Mariano", "Alvarez", role="aut",
+           email="reef103@gmail.com"),
+           person("Bioconductor Package Maintainer", role="cre",
+           email="maintainer@bioconductor.org")) 
 biocViews: ExperimentData, Genome, DNASeqData, RNASeqData, ExperimentData,
            ExpressionData, RNASeqData, Homo_sapiens_Data, CancerData,
-           SingleCellData
+           SingleCellData, GEO, ExperimentHub
 Depends: Biobase, GEOquery
 Suggests: ExperimentHub (>= 0.99.6), knitr, BiocStyle
 License: Artistic-2.0
