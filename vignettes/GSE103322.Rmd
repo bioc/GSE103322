@@ -1,0 +1,64 @@
+---
+title: "scRNASeq HNSC data using Bioconductor's ExperimentHub"
+author: "Mariano J. Alvarez"
+date: "`r doc_date()`"
+vignette: >
+  %\VignetteIndexEntry{scRNASeq HNSC data using Bioconductor's ExperimentHub}
+  %\VignetteEngine{knitr::rmarkdown}
+output: 
+  BiocStyle::html_document
+---
+
+
+# Accessing human HNSC scRNASeq data using Bioconductor's ExperimentHub
+
+Transcripts per million (TPM) single cell RNA-Seq data for 5,902 cells from
+18 patients--oral cavity head and neck squamous cell carcinoma (HNSC)--
+are available from GEO
+[GSE103322](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE103322).
+These data are also available as a *SingleCellExpression* from ExperimentHub.
+
+In the example below, we show how this dataset can be dwnloaded from 
+ExperimentHub.
+
+```{r get-sce}
+library(ExperimentHub)
+eh = ExperimentHub()
+dset <- query(eh , "GSE103322")
+dset
+```
+One can then extract the data for this using
+```{r download-sce}
+sce <- dset[[1]]
+```
+
+##  Exploring the metadata
+
+The metadata is available from the *SingleCellExpression* object with
+
+```{r metadata}
+head(colData(sce))
+```
+
+For example, to obtain the number of cells classified as non-tumor types
+
+```{r non-tumor}
+table(colData(sce)$non.cancer.cell.type)
+```
+
+##  Extracting the data 
+
+The data can be extracted from the *SingleCellExpression* object with
+
+```{r data}
+dset <- assays(sce)$TPM
+dim(dset)
+dset[1:4, 1:3]
+```
+
+# sessionInfo()
+
+```{r sessionInfo}
+sessionInfo()
+```
+
