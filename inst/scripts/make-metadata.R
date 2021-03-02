@@ -4,9 +4,9 @@
 ###
 
 meta <- data.frame(
-    Title = paste0("Sincle cell RNA-seq data for human head and neck squamous ",
+    Title = paste0("Single cell RNA-seq data for human head and neck squamous ",
                      "cell carcinoma"),
-    Description = paste0("scRNA-Sequencing and metadata data for 5902 cells ",
+    Description = paste0("scRNA-Sequencing data and metadata for 5902 cells ",
                            " from 18 patients with oral cavity head and neck ",
                            "squamous cell carcinoma. Tumors were ",
                            "disaggregated, sorted into single cells, and ",
