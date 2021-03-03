@@ -1,5 +1,5 @@
 ### =========================================================================
-### GSE103322 metadata 
+### GSE103322 metadata
 ### -------------------------------------------------------------------------
 ###
 
@@ -11,9 +11,9 @@ meta <- data.frame(
                            "squamous cell carcinoma. Tumors were ",
                            "disaggregated, sorted into single cells, and ",
                            "profiled by Smart-seq2"),
-    BiocVersion = "3.12",
-    Genome = "hg19", 
-    SourceType = "tar.gz", 
+    BiocVersion = "3.13",
+    Genome = "hg19",
+    SourceType = "tar.gz",
     SourceUrl = "http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE103322",
     SourceVersion = "Nov 30 2017",
     Species = "Homo sapiens",
@@ -29,4 +29,3 @@ meta <- data.frame(
 )
 
 write.csv(meta, file="inst/extdata/metadata.csv", row.names=FALSE)
-
