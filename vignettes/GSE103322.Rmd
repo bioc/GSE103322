@@ -23,6 +23,7 @@ ExperimentHub.
 
 ```{r get-sce}
 library(ExperimentHub)
+library(SingleCellExperiment)
 eh = ExperimentHub()
 dset <- query(eh , "GSE103322")
 dset
@@ -37,13 +38,13 @@ sce <- dset[[1]]
 The metadata is available from the *SingleCellExpression* object with
 
 ```{r metadata}
-head(colData(sce))
+head(SummarizedExperiment::colData(sce))
 ```
 
 For example, to obtain the number of cells classified as non-tumor types
 
 ```{r non-tumor}
-table(colData(sce)$non.cancer.cell.type)
+table(SummarizedExperiment::colData(sce)$non.cancer.cell.type)
 ```
 
 ##  Extracting the data 
@@ -51,7 +52,7 @@ table(colData(sce)$non.cancer.cell.type)
 The data can be extracted from the *SingleCellExpression* object with
 
 ```{r data}
-dset <- assays(sce)$TPM
+dset <- SummarizedExperiment::assays(sce)$TPM
 dim(dset)
 dset[1:4, 1:3]
 ```

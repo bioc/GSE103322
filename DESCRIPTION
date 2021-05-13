@@ -6,14 +6,19 @@ Description: Single cell RNA-Seq data for 5902 cells from 18 patients
     (http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE103322).
     GSE103322 data have been parsed into a SincleCellExperiment
     object available in ExperimentHub.
-Version: 0.99.0
+Version: 0.99.1
 Authors@R: c(person("Mariano", "Alvarez", role=c("aut", "cre"),
            email="reef103@gmail.com"))
 biocViews: ExperimentData, Genome, DNASeqData, RNASeqData, ExperimentData,
            ExpressionData, RNASeqData, Homo_sapiens_Data, CancerData,
            SingleCellData, GEO, ExperimentHub
 Depends: Biobase, GEOquery
-Suggests: ExperimentHub (>= 0.99.6), knitr, BiocStyle
+Suggests: ExperimentHub (>= 0.99.6),
+          knitr,
+          BiocStyle,
+          rmarkdown,
+          SummarizedExperiment,
+          SingleCellExperiment
 License: Artistic-2.0
 VignetteBuilder: knitr
 NeedsCompilation: no
